@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".ui.screens.fragments.SettingsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:text="General Settings"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold" />
+
+        <include
+            android:id="@+id/settingJobCountry"
+            layout="@layout/item_setting" />
+
+        <include
+            android:id="@+id/settingFaqs"
+            layout="@layout/item_setting" />
+
+        <include
+            android:id="@+id/settingHelp"
+            layout="@layout/item_setting" />
+
+        <include
+            android:id="@+id/settingPrivacy"
+            layout="@layout/item_setting" />
+
+        <include
+            android:id="@+id/settingLanguage"
+            layout="@layout/item_setting" />
+
+        <include
+            android:id="@+id/settingNotifications"
+            layout="@layout/item_setting" />
+
+    </LinearLayout>
+
+</ScrollView>

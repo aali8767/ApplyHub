@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_bottom_sheet"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/tvNotificationTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Notification Settings"
+        android:textColor="#4BA8A4"
+        android:textSize="22sp" />
+
+    <LinearLayout
+        android:id="@+id/cardPushNotification"
+        android:layout_width="match_parent"
+        android:background="@drawable/bg_stander_item"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvPushTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="General Push Notifications"
+                android:textColor="#444"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/switchPush"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:trackTint="#D9EDEB"
+                app:thumbTint="#4BA8A4"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvPushDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Receive general updates and notifications"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</LinearLayout>
