@@ -5,12 +5,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
 import com.example.applyhub.R;
 import com.example.applyhub.data.JobApiService;
 import com.example.applyhub.data.RetrofitClient;
@@ -22,7 +20,6 @@ import com.example.applyhub.ui.screens.activities.HelpFeedbackActivity;
 import com.example.applyhub.ui.screens.bottom_sheets.LanguagePreferenceBottomSheet;
 import com.example.applyhub.ui.screens.bottom_sheets.NotificationSettingsBottomSheet;
 import com.example.applyhub.ui.screens.bottom_sheets.TitleDescriptionBottomSheet;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -32,9 +29,8 @@ import retrofit2.Retrofit;
 public class SettingsFragment extends Fragment {
     private FragmentSettingsBinding binding;
 
-
     public SettingsFragment() {
-        // Required empty public constructor
+
     }
 
     @Override

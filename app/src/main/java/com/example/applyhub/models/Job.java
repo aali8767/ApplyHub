@@ -6,6 +6,7 @@ public class Job {
     private int id;
     private String title;
     private String employment_type;
+    private String employee_no;
     private int work_field_id;
     private String work_place;
     private Country country_of_employment;
@@ -45,11 +46,11 @@ public class Job {
     private List<Skill> skills;
     private WorkField work_field;
 
-
-    public Job(int id, String title, String employment_type, int work_field_id, String work_place, Country country_of_employment, String salary, int salary_show, int work_experience, String job_valid_unite, String summary, Country nationality_prefrence, Country country_of_residence, String gender_perfrence, int request_vedio, String question, int status, int business_man_id, int currency_id, int pay_status, int education_level_id, int education_feild_id, int certification_id, String file_description, String country_of_graduation, String create_time, int expire_date, int applicants, List<Object> invited, int watches_count, boolean is_favorite, boolean is_applied, List<Watch> watches, Education education_level, Education education_feild, Certification certification, ExperienceYear experience_year, BusinessMan business_man, Currency currency, List<Skill> skills, WorkField work_field) {
+    public Job(int id, String title, String employment_type, String employee_no, int work_field_id, String work_place, Country country_of_employment, String salary, int salary_show, int work_experience, String job_valid_unite, String summary, Country nationality_prefrence, Country country_of_residence, String gender_perfrence, int request_vedio, String question, int status, int business_man_id, int currency_id, int pay_status, int education_level_id, int education_feild_id, int certification_id, String file_description, String country_of_graduation, String create_time, int expire_date, int applicants, List<Object> invited, int watches_count, boolean is_favorite, boolean is_applied, List<Watch> watches, Education education_level, Education education_feild, Certification certification, ExperienceYear experience_year, BusinessMan business_man, Currency currency, List<Skill> skills, WorkField work_field) {
         this.id = id;
         this.title = title;
         this.employment_type = employment_type;
+        this.employee_no = employee_no;
         this.work_field_id = work_field_id;
         this.work_place = work_place;
         this.country_of_employment = country_of_employment;
@@ -88,6 +89,14 @@ public class Job {
         this.currency = currency;
         this.skills = skills;
         this.work_field = work_field;
+    }
+
+    public String getEmployee_no() {
+        return employee_no;
+    }
+
+    public void setEmployee_no(String employee_no) {
+        this.employee_no = employee_no;
     }
 
     public int getId() {

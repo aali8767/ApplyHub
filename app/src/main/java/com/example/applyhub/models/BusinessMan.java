@@ -1,6 +1,8 @@
 package com.example.applyhub.models;
 
-public class BusinessMan {
+import java.io.Serializable;
+
+public class BusinessMan implements Serializable {
     private int id;
     private String business_name;
     private String email;
@@ -8,7 +10,9 @@ public class BusinessMan {
     private String intro_phone;
     private String telephone;
     private String intro_telephone;
+    private String employee_no;
     private int role_id;
+    private int type_business;
     private String created_at;
     private String updated_at;
     private int active_status;
@@ -23,7 +27,7 @@ public class BusinessMan {
     private String experience_years;
     private int number_experience_years;
 
-    public BusinessMan(int id, String business_name, String email, String phone, String intro_phone, String telephone, String intro_telephone, int role_id, String created_at, String updated_at, int active_status, int complete_status, String website, int contact_privacy, String bio, int is_from_socialite, int active_socialite, String image_url, String cover_url, String experience_years, int number_experience_years) {
+    public BusinessMan(int id, String business_name, String email, String phone, String intro_phone, String telephone, String intro_telephone, String employee_no, int role_id, int type_business, String created_at, String updated_at, int active_status, int complete_status, String website, int contact_privacy, String bio, int is_from_socialite, int active_socialite, String image_url, String cover_url, String experience_years, int number_experience_years) {
         this.id = id;
         this.business_name = business_name;
         this.email = email;
@@ -31,7 +35,9 @@ public class BusinessMan {
         this.intro_phone = intro_phone;
         this.telephone = telephone;
         this.intro_telephone = intro_telephone;
+        this.employee_no = employee_no;
         this.role_id = role_id;
+        this.type_business = type_business;
         this.created_at = created_at;
         this.updated_at = updated_at;
         this.active_status = active_status;
@@ -45,6 +51,22 @@ public class BusinessMan {
         this.cover_url = cover_url;
         this.experience_years = experience_years;
         this.number_experience_years = number_experience_years;
+    }
+
+    public String getEmployee_no() {
+        return employee_no;
+    }
+
+    public void setEmployee_no(String employee_no) {
+        this.employee_no = employee_no;
+    }
+
+    public int getType_business() {
+        return type_business;
+    }
+
+    public void setType_business(int type_business) {
+        this.type_business = type_business;
     }
 
     public int getId() {

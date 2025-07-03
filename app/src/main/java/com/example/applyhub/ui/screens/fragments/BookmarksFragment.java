@@ -19,7 +19,7 @@ public class BookmarksFragment extends Fragment {
     private FragmentJobsBinding binding;
 
     public BookmarksFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
@@ -32,9 +32,6 @@ public class BookmarksFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-
-
 
     }
 }

@@ -251,6 +251,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             app:flexWrap="wrap"
+            android:background="@drawable/bg_stander_item"
+            android:padding="12dp"
             app:justifyContent="flex_start" />
 
         <TextView

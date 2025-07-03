@@ -3,6 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.screens.activities.FAQsActivity"
     android:background="@drawable/bg_bottom_sheet"
     android:orientation="vertical"
     android:padding="24dp">
@@ -24,7 +26,6 @@
         android:textColor="#333333"
         android:textSize="16sp" />
 
-    <!-- LOGIN Button -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
@@ -37,7 +38,6 @@
         app:backgroundTint="#4BA8A4"
         app:cornerRadius="16dp" />
 
-    <!-- SIGNUP Button -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSignup"
         android:layout_width="match_parent"

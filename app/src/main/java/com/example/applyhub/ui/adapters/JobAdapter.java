@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -87,13 +88,13 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.JobViewHolder> {
 
             binding.skillsContainer.removeAllViews();
 
-            if (job.getSkills() != null) {
+            if (job.getSkills() != null && !job.getSkills().isEmpty()) {
                 for (Skill skill : job.getSkills()) {
                     TextView chip = new TextView(context);
                     chip.setText(skill.getName());
-                    chip.setPadding(24, 12, 24, 12);
+                    chip.setPadding(50, 20, 50, 20);
                     chip.setTextColor(Color.parseColor("#4BA8A4"));
-                    chip.setTextSize(12);
+                    chip.setTextSize(15);
                     chip.setBackground(ContextCompat.getDrawable(context, R.drawable.bg_skill_chip));
                     chip.setLayoutParams(
                             new ViewGroup.MarginLayoutParams(
@@ -105,6 +106,8 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.JobViewHolder> {
                     ((ViewGroup.MarginLayoutParams) chip.getLayoutParams()).setMargins(8, 8, 8, 8);
                     binding.skillsContainer.addView(chip);
                 }
+            } else {
+                binding.skillsContainer.setVisibility(View.GONE);
             }
 
             binding.tvExpireDate.setText("Expire in: " + job.getExpire_date() + " days");

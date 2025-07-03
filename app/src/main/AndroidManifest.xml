@@ -15,6 +15,9 @@
         android:theme="@style/Theme.ApplyHub"
         tools:targetApi="31">
         <activity
+            android:name=".ui.screens.activities.BusinessManActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.screens.activities.JobDetailsActivity"
             android:exported="false" />
         <activity

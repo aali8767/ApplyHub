@@ -41,11 +41,9 @@ dependencies {
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
-
     implementation libs.retrofit
     implementation libs.converter.gson
-
     implementation libs.flexbox
-
+    implementation libs.material.v1100
     implementation libs.glide
 }

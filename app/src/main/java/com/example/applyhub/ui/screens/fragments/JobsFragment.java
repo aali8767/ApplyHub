@@ -1,5 +1,6 @@
 package com.example.applyhub.ui.screens.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,11 +15,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.example.applyhub.data.JobApiService;
 import com.example.applyhub.data.RetrofitClient;
 import com.example.applyhub.databinding.FragmentJobsBinding;
-import com.example.applyhub.models.ApiResponse;
 import com.example.applyhub.models.Job;
+import com.example.applyhub.models.JobsResponse;
 import com.example.applyhub.ui.adapters.JobAdapter;
+import com.example.applyhub.ui.screens.activities.JobDetailsActivity;
 import com.example.applyhub.ui.screens.bottom_sheets.ShareViewBottomSheet;
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import java.util.List;
 
@@ -31,7 +32,7 @@ public class JobsFragment extends Fragment implements JobAdapter.OnJobClickListe
     private FragmentJobsBinding binding;
 
     public JobsFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
@@ -50,7 +51,7 @@ public class JobsFragment extends Fragment implements JobAdapter.OnJobClickListe
 
         apiService.getAllJobs().enqueue(new Callback<>() {
             @Override
-            public void onResponse(@NonNull Call<ApiResponse> call, @NonNull Response<ApiResponse> response) {
+            public void onResponse(@NonNull Call<JobsResponse> call, @NonNull Response<JobsResponse> response) {
                 if (response.isSuccessful() && response.body() != null && response.body().isStatus()) {
                     List<Job> jobs = response.body().getData();
                     JobAdapter adapter = new JobAdapter(jobs, JobsFragment.this);
@@ -60,7 +61,7 @@ public class JobsFragment extends Fragment implements JobAdapter.OnJobClickListe
             }
 
             @Override
-            public void onFailure(@NonNull Call<ApiResponse> call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<JobsResponse> call, @NonNull Throwable t) {
                 Toast.makeText(requireContext(), "Error: " + t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
@@ -69,7 +70,10 @@ public class JobsFragment extends Fragment implements JobAdapter.OnJobClickListe
 
     @Override
     public void onJobClick(int jobId) {
+        Intent intent = new Intent(requireContext(), JobDetailsActivity.class);
+        intent.putExtra("jobId", jobId);
 
+        startActivity(intent);
     }
 
     @Override

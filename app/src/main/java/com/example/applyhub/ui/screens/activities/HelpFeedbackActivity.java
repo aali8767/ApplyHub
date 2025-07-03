@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.applyhub.data.JobApiService;
 import com.example.applyhub.data.RetrofitClient;
 import com.example.applyhub.databinding.ActivityHelpFeedbackBinding;
-import com.example.applyhub.models.ApiResponse;
+import com.example.applyhub.models.JobsResponse;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -43,18 +43,18 @@ public class HelpFeedbackActivity extends AppCompatActivity {
                     email
             ).enqueue(new Callback<>() {
                 @Override
-                public void onResponse(@NonNull Call<ApiResponse> call, @NonNull Response<ApiResponse> response) {
+                public void onResponse(@NonNull Call<JobsResponse> call, @NonNull Response<JobsResponse> response) {
                     if (response.body() != null) {
                         if (response.body().isStatus()) {
                             Toast.makeText(getBaseContext(), "تم الارسال بنجاح", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(getBaseContext(), response.body().getMessage().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getBaseContext(), "خطأ في البيانات المدخلة", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
 
                 @Override
-                public void onFailure(@NonNull Call<ApiResponse> call, @NonNull Throwable t) {
+                public void onFailure(@NonNull Call<JobsResponse> call, @NonNull Throwable t) {
                     Toast.makeText(getBaseContext(), "حدث خطأ ما", Toast.LENGTH_SHORT).show();
                 }
             });

@@ -1,13 +1,11 @@
 package com.example.applyhub.models;
 
-import java.util.List;
-
-public class ApiResponse {
+public class JobDetailsResponse {
     private boolean status;
     private Message message;
-    private List<Job> data;
+    private Job data;
 
-    public ApiResponse(boolean status, Message message, List<Job> data) {
+    public JobDetailsResponse(boolean status, Message message, Job data) {
         this.status = status;
         this.message = message;
         this.data = data;
@@ -29,11 +27,11 @@ public class ApiResponse {
         this.message = message;
     }
 
-    public List<Job> getData() {
+    public Job getData() {
         return data;
     }
 
-    public void setData(List<Job> data) {
+    public void setData(Job data) {
         this.data = data;
     }
 }
